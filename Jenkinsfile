@@ -1,8 +1,8 @@
 pipeline {
 
   environment {
-    registry = "10.172.0.2:5000/Athappamohan/flask"
-    registry_mysql = "10.172.0.2:5000/Athappamohan/mysql"
+    registry = "10.172.0.2:5000/athappamohan/flask"
+    registry_mysql = "10.172.0.2:5000/athappamohan/mysql"
     dockerImage = ""
   }
 
@@ -11,7 +11,7 @@ pipeline {
   
     stage('Checkout Source') {
       steps {
-        git 'https://github.com/Athappamohan/Docker-Project.git'
+        git 'https://github.com/athappamohan/Docker-Project.git'
       }
     }
 
@@ -42,8 +42,8 @@ pipeline {
    }
    stage('Build mysql image') {
      steps{
-       sh 'docker build -t "10.172.0.2:5000/Athappamohan/mysql:$BUILD_NUMBER"  "$WORKSPACE"/mysql'
-        sh 'docker push "10.172.0.2:5000/Athappamohan/mysql:$BUILD_NUMBER"'
+       sh 'docker build -t "10.172.0.2:5000/athappamohan/mysql:$BUILD_NUMBER"  "$WORKSPACE"/mysql'
+        sh 'docker push "10.172.0.2:5000/athappamohan/mysql:$BUILD_NUMBER"'
         }
       }
     stage('Deploy App') {
