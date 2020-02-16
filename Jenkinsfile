@@ -9,13 +9,13 @@ pipeline {
   agent any
     stages {
   
-    stage('Checkout Source') {
+    stage('Checkout Source-cubensquare') {
       steps {
         git 'https://github.com/athappamohan/Docker-Project.git'
       }
     }
 
-    stage('Build image') {
+    stage('Build image-cubensquare') {
       steps{
         script {
           dockerImage = docker.build registry + ":$BUILD_NUMBER"
