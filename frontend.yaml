@@ -16,7 +16,7 @@ spec:
       app: frontend
    spec:
     containers:
-    - image: 10.172.0.2:5000/athappamohan/flask:${BUILD_NUMBER}
+    - image: 10.172.0.2:5000/athappamohan/flask
       name: frontend
 
 ---
